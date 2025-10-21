@@ -20,7 +20,8 @@ jobs:
       - name: Set Up Environment
         run: |
           sudo apt update
-          sudo apt install -y libxrandr-dev libxxf86vm-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev
+          sudo apt install -y libxrandr-dev libxxf86vm-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev llvm-18 llvm-18-dev clang-15 libclang-18-dev -y
+          export LLVM_CONFIG=/usr/bin/llvm-config-18
           pip3 install mako meson ninja
 
       - name: Set ndkver,sdkver and work_dir
