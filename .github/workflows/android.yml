@@ -1,4 +1,4 @@
-name: Build Android
+name: Construir Android troll
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install -y libxrandr-dev libxxf86vm-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev llvm-18 llvm-18-dev llvm-18-tools clang-18 cmake python3-pip unzip git curl
-          export LLVM_CONFIG=$(which llvm-config-18)
+          export LLVM_CONFIG=/usr/lib/llvm-18/bin/llvm-config-18
           pip3 install mako meson ninja
 
       - name: Set ndkver,sdkver and work_dir
